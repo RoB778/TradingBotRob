@@ -9,6 +9,9 @@ from edgebot.signals.news import collect
 from edgebot.signals.analyzer import analyze
 from edgebot.engine.sizing import stake_for, RiskLimits
 from edgebot.engine.paper import simulate_buy, PaperLedger
+from dotenv import load_dotenv
+from pathlib import Path
+load_dotenv(Path(__file__).parents[1] / ".env")
 
 # Mercados Fed: los mas liquidos segun el scan. Rellena con las preguntas
 # reales que te devolvio scan.py.
