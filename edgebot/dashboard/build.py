@@ -19,6 +19,9 @@ import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv(Path(__file__).parents[2] / ".env")
 
 from edgebot.signals import news, geopolitics, crypto_sentiment, quant
 from edgebot.signals.market_context import fetch_market_context, as_prompt_block
