@@ -30,7 +30,7 @@ from dataclasses import dataclass
 
 from edgebot.signals.news import NewsItem
 
-MODEL = "claude-opus-4-8"  # ajusta al modelo que uses
+MODEL = "claude-sonnet-4-6"  # ajusta al modelo que uses
 
 SYSTEM = """Eres un analista macro que estima probabilidades para mercados
 de eventos. Tu unico objetivo es la CALIBRACION: que cuando digas 70%,
