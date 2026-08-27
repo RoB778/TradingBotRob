@@ -176,7 +176,9 @@ def analyze_stock(ticker: str, macro_context: str = "") -> StockAnalysis | None:
         messages=[{"role": "user", "content": _build_prompt(f, macro_context)}],
     )
     text = "".join(b.text for b in resp.content if b.type == "text").strip()
-    text = text.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+    import re
+    text = re.search(r'\{.*\}', text, re.DOTALL)
+    text = text.group(0) if text else ""
 
     try:
         d = json.loads(text)
